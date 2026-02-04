@@ -4,7 +4,14 @@
 \alias{aggregate_assay}
 \title{Aggregate Seurat assay over groups}
 \usage{
-aggregate_assay(object, group_name, fun = "mean", assay = "RNA", slot = "data")
+aggregate_assay(
+  object,
+  group_name,
+  fun = "mean",
+  assay = "RNA",
+  layer = "data",
+  slot = NULL
+)
 }
 \arguments{
 \item{group_name}{A character vector indicating the metadata column to aggregate over.}
@@ -13,7 +20,9 @@ aggregate_assay(object, group_name, fun = "mean", assay = "RNA", slot = "data")
 
 \item{assay}{The assay to summarize.}
 
-\item{slot}{The slot to summarize.}
+\item{layer}{The layer to summarize (Seurat v5).}
+
+\item{slot}{Deprecated. Use \code{layer} instead.}
 }
 \value{
 A Seurat object.
